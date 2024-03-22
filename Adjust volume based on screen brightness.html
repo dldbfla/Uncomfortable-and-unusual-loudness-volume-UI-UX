@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adjusting volume with screen brightness</title>
+</head>
+<body>
+    <h2>Adjusting volume with screen brightness</h2>
+    <label for="brightness-slider">Adjust screen brightness:</label>
+    <input type="range" id="brightness-slider" min="0" max="100" value="100">
+    <audio id="audio-player" controls>
+        <source src="To the desired mp3 file path" type="audio/mp3">
+        Your browser does not support audio.
+    </audio>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audioPlayer = document.getElementById('audio-player');
+            var brightnessSlider = document.getElementById('brightness-slider');
+
+            // Called whenever the value of the brightness slider changes.
+            brightnessSlider.oninput = function() {
+                // Adjust the brightness value between 0 and 1.
+                var brightnessValue = this.value / 100;
+
+                // Adjust the brightness of the page.
+                document.body.style.backgroundColor = `rgba(0, 0, 0, ${1 - brightnessValue})`;
+                document.body.style.color = `rgba(255, 255, 255, ${brightnessValue})`;
+
+                // Set the volume to the same ratio as the brightness.
+                audioPlayer.volume = brightnessValue;
+            };
+        });
+    </script>
+</body>
+</html>
