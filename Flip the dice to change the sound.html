@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dice Volume Control UI/UX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #rollDice {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #diceResult {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .dice {
+            width: 100px;
+            height: 100px;
+            background-color: #FFFFFF;
+            border: solid 2px #000000;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin: auto;
+            padding: 10px;
+            transition: transform 0.5s ease; /* Added animation */
+        }
+
+        .dot {
+            width: 20px;
+            height: 20px;
+            background-color: #000000;
+            border-radius: 50%;
+            margin: 2px;
+        }
+
+        /* Additional style for animation effect */
+        @keyframes roll {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="rollDice">Roll Dice</button>
+    <div id="diceResult">Dice Result: </div>
+    <div class="dice" id="dice">
+        <!-- All initial dots hidden -->
+    </div>
+    <audio id="controlSound" controls src="C:\Users\sizip\Downloads\growl.mp3" loop></audio>
+
+    <script>
+        document.getElementById('rollDice').addEventListener('click', function() {
+            var dice = document.getElementById("dice");
+            dice.style.animation = "roll 0.5s ease";
+            dice.addEventListener('animationend', () => {
+                dice.style.animation = 'none';
+            });
+
+            // Reset the dice dots
+            dice.innerHTML = '';
+
+            // Roll two dice and calculate the result
+            const dice1 = Math.floor(Math.random() * 6) + 1;
+            const dice2 = Math.floor(Math.random() * 6) + 1;
+            const sum = dice1 + dice2;
+
+            // Display the result
+            document.getElementById('diceResult').innerText = 'Dice Result: ' + sum;
+
+            // Dynamically create dice dots
+            for (let i = 0; i < sum; i++) {
+                let dot = document.createElement('div');
+                dot.className = 'dot';
+                dice.appendChild(dot);
+            }
+
+            // Adjust volume
+            const volume = sum / 12; // 12 is the maximum sum of two dice
+            const audio = document.getElementById('controlSound');
+            audio.volume = volume;
+
+            // Play audio
+            if(audio.paused) {
+                audio.play();
+            }
+        });
+    </script>
+</body>
+</html>
