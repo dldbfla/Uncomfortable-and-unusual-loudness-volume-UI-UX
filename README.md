@@ -11,6 +11,7 @@ Moving the slide bar to the left makes it darker and lowers the sound, and movin
 
 
 ## Flip the dice to change the sound.html
-##### 
+##### <audio id="controlSound" controls src="Desired MP3 sound" loop></audio> Enter the desired mp3 file path in this section and run the html file.
+It goes from 1 to 12, with 12 being the loudest and 1 being the quietest. Pressing the Roll Dice button changes the dice result value and changes the dice eye.
 ![스크린샷 2024-03-25 203417](https://github.com/dldbfla/Uncomfortable-and-unusual-loudness-volume-UI-UX/assets/89433437/2d3e78bb-ecda-453b-bf93-e4edfc7597a1)
 ![스크린샷 2024-03-25 203414](https://github.com/dldbfla/Uncomfortable-and-unusual-loudness-volume-UI-UX/assets/89433437/3cf2268e-5b12-49e6-adbc-ea6f5b936838)
