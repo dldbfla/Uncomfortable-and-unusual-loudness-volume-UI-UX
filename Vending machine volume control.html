@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Improved Vending Machine Design</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f0f0f0;
+    }
+    .vending-machine, .music-player {
+        background: linear-gradient(to bottom, #3D3D3D 0%, #1B1B1B 100%);
+        border-radius: 20px; 
+        padding: 20px;
+        width: 400px;
+        margin: 20px auto;
+        box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+    .product-button, .control-button {
+        background-color: #757575;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 10px auto;
+        width: 90%;
+        color: #FFF;
+        padding: 10px;
+        text-align: center;
+    }
+    .volume-control {
+        width: 80%;
+        margin: 10px auto;
+    }
+    #product-info {
+        color: #ffffff;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<div class="vending-machine">
+    <button class="product-button" data-volume="0.9">Cola - $1 (90%)</button>
+    <button class="product-button" data-volume="0.7">Soda - $1 (70%)</button>
+    <button class="product-button" data-volume="0.05">Water - $0.5 (5%)</button>
+    <button class="product-button" data-volume="0.2">Coffee - $1.5 (20%)</button>
+    <div id="product-info"></div>
+</div>
+
+<div class="music-player">
+    <button class="control-button" id="play">Play</button>
+    <button class="control-button" id="pause">Pause</button>
+    <input type="range" id="volume" class="volume-control" min="0" max="1" step="0.1" value="0.5">
+</div>
+
+<script>
+    const audio = new Audio('https://example.com/audio.mp3'); // URL to a web-accessible audio file
+    audio.volume = 0.5; // Initial volume setting
+
+    document.getElementById('play').addEventListener('click', () => {
+        audio.play();
+    });
+    document.getElementById('pause').addEventListener('click', () => {
+        audio.pause();
+    });
+    document.getElementById('volume').addEventListener('input', (event) => {
+        audio.volume = event.target.value;
+    });
+
+    const buttons = document.querySelectorAll('.product-button');
+    const productInfo = document.getElementById('product-info');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const clickSound = new Audio('https://example.com/click.mp3'); // Real path to click sound
+            const productVolume = button.getAttribute('data-volume');
+            audio.volume = productVolume;
+            clickSound.volume = productVolume;
+            clickSound.play();
+            
+            // Instead of an alert, product information is directly displayed on the screen
+            productInfo.textContent = `${button.textContent} selected`;
+            productInfo.style.opacity = '1';
+            
+            // Make the selected information disappear after a few seconds
+            setTimeout(() => {
+                productInfo.style.opacity = '0';
+            }, 3000); // Disappears after 3 seconds
+        });
+    });
+</script>
+</body>
+</html>
+    
