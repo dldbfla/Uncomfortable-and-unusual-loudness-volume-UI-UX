@@ -27,3 +27,11 @@ Clicking on one of happy,sad,angry,calm will return the
 the screen will change color and each sound will have a different volume and you can attach the .mp3 path of your choice after the data-audio= text  
 ![스크린샷 2024-03-26 173303](https://github.com/dldbfla/Uncomfortable-and-unusual-loudness-volume-UI-UX/assets/89433437/14d99d28-f7ae-4cd4-8997-fdea09d19ccd)
 ![스크린샷 2024-03-26 173305](https://github.com/dldbfla/Uncomfortable-and-unusual-loudness-volume-UI-UX/assets/89433437/a012870b-6a9c-438b-b94d-4719be699ff3)
+
+
+
+## Vending Machine Volume Control 
+#####  onst audio = new Audio('https://example.com/audio.mp3');,const clickSound = new Audio('https://example.com/click.mp3');  Paste this part of the code (' ') into the path of your desired song mp3 file.
+Vending machine concept, pressing Coke, Cider, Bottled Water, Coffee will make the sound louder by (%) next to it.
+![스크린샷 2024-03-27 184452](https://github.com/dldbfla/Uncomfortable-and-unusual-loudness-volume-UI-UX/assets/89433437/56140656-39da-4ce4-8076-571c136c5b63)
+![스크린샷 2024-03-27 184457](https://github.com/dldbfla/Uncomfortable-and-unusual-loudness-volume-UI-UX/assets/89433437/2378ee12-0356-414a-a0c1-dec33ab70b25)
