@@ -30,8 +30,14 @@ the screen will change color and each sound will have a different volume and you
 
 
 
-## Vending Machine Volume Control 
+## Vending Machine Volume Control.html
 #####  onst audio = new Audio('https://example.com/audio.mp3');   ,const clickSound = new Audio('https://example.com/click.mp3');  Paste this part of the code (' ') into the path of your desired song mp3 file.
 Vending machine concept, pressing Coke, Cider, Bottled Water, Coffee will make the sound louder by (%) next to it.
 ![스크린샷 2024-03-27 184452](https://github.com/dldbfla/Uncomfortable-and-unusual-loudness-volume-UI-UX/assets/89433437/56140656-39da-4ce4-8076-571c136c5b63)
 ![스크린샷 2024-03-27 184457](https://github.com/dldbfla/Uncomfortable-and-unusual-loudness-volume-UI-UX/assets/89433437/2378ee12-0356-414a-a0c1-dec33ab70b25)
+
+
+## Create Wizard Order Volume Control.html
+#####    <source src="your_music_file.mp3"Here, enter the path address of the desired MP3 file.& background-image: url('https://your_background_image_url'); You can also enter the URL address of the background image in ' '.
+View the list of available magic and enter the desired order in the input box to see the volume modifier that will be applied.
+![스크린샷 2024-03-29 194914](https://github.com/dldbfla/Uncomfortable-and-unusual-loudness-volume-UI-UX/assets/89433437/3ce28912-0798-49fe-8eb5-e780175001f2)
