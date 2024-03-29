@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magic spell volume control</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #282c34;
+            color: #ffffff;
+            margin: 0;
+            background-image: url('https://your_background_image_url'); 
+            background-size: cover;
+        }
+
+        .magic-circle, .audio-controls {
+            border: 3px solid #9b59b6;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 20px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin: 10px;
+            background: rgba(155, 89, 182, 0.2); 
+            box-shadow: 0 0 15px #9b59b6; 
+        }
+
+        .audio-controls:hover, .magic-circle:hover {
+            transform: rotate(45deg);
+            box-shadow: 0 0 20px #9b59b6;
+        }
+
+        input[type="text"], audio {
+            margin-top: 20px;
+            padding: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #9b59b6;
+            background-color: #333;
+            color: #ffffff;
+            box-shadow: 0 0 10px #9b59b6; 
+        }
+
+        input[type="text"]::placeholder {
+            color: #ddd; 
+        }
+
+        .volume-indicator {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #ffffff;
+            text-shadow: 0 0 5px #9b59b6;
+        }
+
+        .spells-list {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .spells-list h2 {
+            color: #9b59b6;
+        }
+
+        .spells-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .spells-list ul li {
+            margin: 5px 0;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="magic-circle">Click the Wizard</div>
+    <input type="text" id="spellInput" placeholder="Enter your order here...">
+    <div id="volumeIndicator" class="volume-indicator">Volume: 0</div>
+    <audio id="musicPlayer" controls>
+        <source src="your_music_file.mp3" type="audio/mp3">
+        Your browser doesn't support audio tags.
+    </audio>
+
+    <div class="spells-list">
+        <h2>List of available magic</h2>
+        <ul>
+            <li>Whisper of the Serene - Reduce volume by 10% increments </li>
+            <li>Roar of the Tempest- Increase volume by 10% increments </li>
+            <li>Harmony of the Spheres - Set volume to 50 </li>
+            <li>Crescendo of the Infinite - Set volume to 100 </li>
+            <li>Silence of the Void - Volume Off</li>
+        </ul>
+    </div>
+
+    <script>
+        const player = document.getElementById('musicPlayer');
+        const volumeIndicator = document.getElementById('volumeIndicator');
+        let volume = 0; // Initial volume value is 0%
+
+        document.querySelector('.magic-circle').addEventListener('click', () => {
+            const spell = document.getElementById('spellInput').value;
+
+            if (spell === "Whisper of the Serene") {
+                volume = Math.max(0, volume - 10); // Decrease volume
+            } else if (spell === "Roar of the Tempest") {
+                volume = Math.min(100, volume + 10); // Increase volume
+            } else if (spell === "Harmony of the Spheres") {
+                volume = 50; // Set volume to 50%
+            } else if (spell === "Silence of the Void") {
+                volume = 0; // Turn off the volume
+            } else if (spell === "Crescendo of the Infinite"){
+                volume= 100; //Increase volume to 100% (maximum)
+            }else {
+                alert("Unknown spell!");
+            }
+            volumeIndicator.innerText = `Volume: ${volume}%`;
+            player.volume = volume / 100; // The volume of the HTML5 audio player is between 0.0 and 1.0
+        });
+    </script>
+</body>
+</html>
