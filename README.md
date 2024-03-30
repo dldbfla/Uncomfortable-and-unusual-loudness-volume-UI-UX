@@ -40,4 +40,6 @@ Vending machine concept, pressing Coke, Cider, Bottled Water, Coffee will make t
 ## Create Wizard Order Volume Control.html
 #####    <source src="your_music_file.mp3"Here, enter the path address of the desired MP3 file.& background-image: url('https://your_background_image_url'); You can also enter the URL address of the background image in ' '.
 View the list of available magic and enter the desired order in the input box to see the volume modifier that will be applied.
+
+
 ![스크린샷 2024-03-29 194914](https://github.com/dldbfla/Uncomfortable-and-unusual-loudness-volume-UI-UX/assets/89433437/3ce28912-0798-49fe-8eb5-e780175001f2)
