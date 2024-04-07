@@ -43,3 +43,13 @@ View the list of available magic and enter the desired order in the input box to
 
 
 ![스크린샷 2024-03-29 194914](https://github.com/dldbfla/Uncomfortable-and-unusual-loudness-volume-UI-UX/assets/89433437/3ce28912-0798-49fe-8eb5-e780175001f2)
+
+
+
+
+## Create Adjust the volume of book flipping style.html
+#####  "your-audio-file.mp3" Insert the path to your desired MP3 file here. 
+
+
+![스크린샷 2024-04-07 211915](https://github.com/dldbfla/Uncomfortable-and-unusual-loudness-volume-UI-UX/assets/89433437/cb190367-1f76-4b93-b8d2-462ec7219d29)
+![스크린샷 2024-04-07 211919](https://github.com/dldbfla/Uncomfortable-and-unusual-loudness-volume-UI-UX/assets/89433437/11b26850-8446-4db2-863d-077b5969c0b8)
