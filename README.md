@@ -49,7 +49,7 @@ View the list of available magic and enter the desired order in the input box to
 
 ## Create Adjust the volume of book flipping style.html
 #####  "your-audio-file.mp3" Insert the path to your desired MP3 file here. 
-Left-clicking on a book section will cause the book to flip and increase by 20 volumes. Pressing the Reverting a page button will reverse the book by one page and decrease the volume by 20.
+Left-clicking on any part of the book will increase the volume by 20% as the book is turned. Pressing the Reverting a page button will reverse the book by one page and make it smaller by 20%.
 
 
 ![스크린샷 2024-04-07 211915](https://github.com/dldbfla/Uncomfortable-and-unusual-loudness-volume-UI-UX/assets/89433437/cb190367-1f76-4b93-b8d2-462ec7219d29)
